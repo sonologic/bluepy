@@ -424,8 +424,8 @@ class Peripheral(BluepyHelper):
                 data = resp['d'][0]
                 if self.delegate is not None:
                     self.delegate.handleNotification(hnd, data)
-                if respType not in wantType:
-                    continue
+            if respType not in wantType:
+                continue
             return resp
 
     def _connect(self, addr, addrType=ADDR_TYPE_PUBLIC, iface=None):
